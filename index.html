@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História do Homem de Ferro</title>
+    <style>
+        .story-part {
+            display: none;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .story-part.active {
+            display: block;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="part1" class="story-part active">
+        <p>Tony Stark, um gênio bilionário, é sequestrado e precisa construir uma arma para os sequestradores.</p>
+        <button onclick="nextPart(2)">Próximo</button>
+    </div>
+    <div id="part2" class="story-part">
+        <p>Em vez de uma arma, ele constrói a primeira versão da armadura do Homem de Ferro.</p>
+        <button onclick="nextPart(3)">Próximo</button>
+    </div>
+    <div id="part3" class="story-part">
+        <p>Usando a armadura, Tony vence seus sequestradores e volta para casa, agora determinado a usar sua tecnologia para o bem.</p>
+        <button onclick="nextPart(4)">Próximo</button>
+    </div>
+    <div id="part4" class="story-part">
+        <p>Ele enfrenta muitos desafios, mas sempre busca melhorar sua armadura e combater ameaças, se tornando um herói icônico.</p>
+    </div>
+
+    <script>
+        function nextPart(partNumber) {
+            document.querySelectorAll('.story-part').forEach(part => {
+                part.classList.remove('active');
+            });
+            document.getElementById('part' + partNumber).classList.add('active');
+        }
+    </script>
+</body>
+</html>
